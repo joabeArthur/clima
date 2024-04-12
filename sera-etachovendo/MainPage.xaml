@@ -16,7 +16,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Image Source="lobo.jpg"
+        <Image Source="pinguinfundo.jpg"
                HorizontalOptions="Fill"
                VerticalOptions="Fill"
                Grid.RowSpan="3"
