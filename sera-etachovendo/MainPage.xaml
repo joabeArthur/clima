@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="sera_etachovendo.MainPage"
-             Shell.NavBarIsVisible="False">
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="Blue">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -16,10 +17,87 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Image Source="pinguinfundo.jpg"
+        <Image x:Name="imgFundo"
                HorizontalOptions="Fill"
                VerticalOptions="Fill"
+               Aspect="AspectFill"
                Grid.RowSpan="3"
                Grid.ColumnSpan="3"/>
+<!--============================================================================================================================================================================-->  
+        <Frame x:Name="FrameTemperatura"
+               HorizontalOptions="Fill"
+               VerticalOptions="Fill"
+               Margin="15,5,15,5"
+               Grid.Row="1"
+               Grid.Column="0">
+
+            <Label x:Name="NumeroTemperatura"
+                   FontSize="25"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Start"/>
+        </Frame>
+
+<!--============================================================================================================================================================================-->
+
+        <Frame x:Name="FrameChuva"
+               HorizontalOptions="Fill"
+               VerticalOptions="Start"
+               Margin="15,5,15,5"
+               Grid.Row="1"
+               Grid.Column="1">
+            
+            <Label x:Name="FrameTexto1"/>
+        </Frame>
+
+<!--============================================================================================================================================================================-->
+
+        <Frame x:Name="FrameSol"
+               HorizontalOptions="Fill"
+               VerticalOptions="End"
+               Margin="15,5,15,5"
+               Grid.Row="1"
+               Grid.Column="1">
+            
+            <Label x:Name="FrameTexto2"/>
+        </Frame>
+
+<!--============================================================================================================================================================================-->
+
+        <Frame x:Name="FrameVento"
+               HorizontalOptions="Fill"
+               VerticalOptions="Start"
+               Margin="15,5,15,5"
+               Grid.Row="1"
+               Grid.Column="2">
+
+            <Label x:Name="FrameTexto3"/>
+        </Frame>
+
+<!--============================================================================================================================================================================-->
+
+        <Frame x:Name="FrameLua"
+               HorizontalOptions="Fill"
+               VerticalOptions="End"
+               Margin="15,5,15,5"
+               Grid.Row="1"
+               Grid.Column="2">
+
+            <Label x:Name="FrameTexto4"/>
+        </Frame>
+
+<!--============================================================================================================================================================================-->
+
+        <Frame x:Name="FrameSeila"
+               HorizontalOptions="Fill"
+               VerticalOptions="Fill"
+               Margin="5,10,5,10"
+               Grid.Row="2"
+               Grid.ColumnSpan="3">
+
+            <Label x:Name="FrameTexto5"/>
+        </Frame>
+
+<!--============================================================================================================================================================================-->
+
     </Grid>
 </ContentPage>
