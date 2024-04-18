@@ -27,14 +27,32 @@
         <Frame x:Name="FrameTemperatura"
                HorizontalOptions="Fill"
                VerticalOptions="Fill"
-               Margin="15,5,15,5"
+               BackgroundColor=""
+               BorderColor=""
+               CornerRadius=""
                Grid.Row="1"
                Grid.Column="0">
+            
+        <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-            <Label x:Name="NumeroTemperatura"
-                   FontSize="25"
+            <Label x:Name="LabelTemperatura"
+                   Text=""
+                   FontSize="30"
                    HorizontalOptions="Center"
-                   VerticalOptions="Start"/>
+                   
+                   Grid.Row="0"/>
+            
+            <Label x:Name="LabelCity"
+                   Text=""
+                   FontSize="15"
+                   HorizontalOptions="Center"
+                  
+                   Grid.Row="1"/>
+        </Grid>
         </Frame>
 
 <!--============================================================================================================================================================================-->
@@ -42,11 +60,15 @@
         <Frame x:Name="FrameChuva"
                HorizontalOptions="Fill"
                VerticalOptions="Start"
-               Margin="15,5,15,5"
+              
                Grid.Row="1"
                Grid.Column="1">
             
-            <Label x:Name="FrameTexto1"/>
+            <Label x:Name="LabelChuvaDia"
+                   Text=""
+                   FontSize="25"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"/>
         </Frame>
 
 <!--============================================================================================================================================================================-->
@@ -54,7 +76,7 @@
         <Frame x:Name="FrameSol"
                HorizontalOptions="Fill"
                VerticalOptions="End"
-               Margin="15,5,15,5"
+               
                Grid.Row="1"
                Grid.Column="1">
             
@@ -66,7 +88,7 @@
         <Frame x:Name="FrameVento"
                HorizontalOptions="Fill"
                VerticalOptions="Start"
-               Margin="15,5,15,5"
+              
                Grid.Row="1"
                Grid.Column="2">
 
@@ -78,7 +100,7 @@
         <Frame x:Name="FrameLua"
                HorizontalOptions="Fill"
                VerticalOptions="End"
-               Margin="15,5,15,5"
+              
                Grid.Row="1"
                Grid.Column="2">
 

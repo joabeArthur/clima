@@ -2,44 +2,43 @@
 
 public partial class MainPage : ContentPage
 {	
-	ClassPai atual;
-	Chuvanoite chuvanoite;
-
+	Results resultado;
 	public MainPage()
 	{
 		InitializeComponent();
 
-		atual = new ClassPai();
-
-		chuvanoite = new Chuvanoite();
+		TestarLayout();
+		PrencherTela();
 	}
-	public class Results
-	{
-		public int tmp{get; set;}
-		public int date{get; set;}
-		public int condition_code{get; set;}
-		public string description{get; set;}
-		public string currently{get; set;}
-		public string city{get; set;}
-		public int img_id{get; set;}
-		public int humidity{get; set;}
-		public int cloudiness{get; set;}
-		public string moon_phase{get; set;}
-		public forecast fore{get; set;} = new forecast();
-	}
+	
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------\\
-	public class forecast
+	
+	void PrencherTela()
 	{
+		LabelTemperatura.Text = resultado.temp.ToString();
+		LabelCity.Text = resultado.city;
+		LabelChuvaDia.Text = resultado.description;
 
 	}
+	
 //------------------------------------------------------------------------------------------------------------------------------------------------------\\
-	void MudaImg(object sender, EventArgs args)
+
+	void TestarLayout()
 	{
-		if (description == true)
+		resultado = new Results();
+
+		resultado.temp = 20;
+		resultado.city = "PR, Apucarana";
+		resultado.description = "Chuva";
+
+//------------------------------------------------------------------------------------------------------------------------------------------------------\\
+
+		if (resultado.description == "Chuva")
 		{
-			imgFundo = chuvanoite;
+			imgFundo.Source = "chuvanoite.jpg";
 		}
+		
 	}
 	
 }
