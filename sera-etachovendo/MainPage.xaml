@@ -27,9 +27,9 @@
         <Frame x:Name="FrameTemperatura"
                HorizontalOptions="Fill"
                VerticalOptions="Fill"
-               BackgroundColor=""
-               BorderColor=""
-               CornerRadius=""
+               BackgroundColor="#25CCCCCC"
+               BorderColor="Transparent"
+               CornerRadius="25"
                Grid.Row="1"
                Grid.Column="0">
             
@@ -43,11 +43,13 @@
                    Text=""
                    FontSize="30"
                    HorizontalOptions="Center"
-                   
+                   TextColor="Gray"
                    Grid.Row="0"/>
             
             <Label x:Name="LabelCity"
                    Text=""
+                   FontFamily="Fighting_Spirit_2"
+                   TextColor="Gray"
                    FontSize="15"
                    HorizontalOptions="Center"
                   
@@ -60,15 +62,25 @@
         <Frame x:Name="FrameChuva"
                HorizontalOptions="Fill"
                VerticalOptions="Start"
-              
+               BackgroundColor="#25CCCCCC"
+               BorderColor="Transparent"
+               CornerRadius="25"
                Grid.Row="1"
                Grid.Column="1">
             
-            <Label x:Name="LabelChuvaDia"
+            <Label x:Name="LabelChuva"
                    Text=""
+                   TextColor="Gray"
                    FontSize="25"
                    HorizontalOptions="Center"
-                   VerticalOptions="Center"/>
+                   VerticalOptions="Start"/>
+            
+            <Label x:Name="LabelHumidade"
+                   Text=""
+                   TextColor="Gray"
+                   FontSize="25"
+                   HorizontalOptions="Center"
+                   VerticalOptions="End"/>
         </Frame>
 
 <!--============================================================================================================================================================================-->
@@ -76,11 +88,25 @@
         <Frame x:Name="FrameSol"
                HorizontalOptions="Fill"
                VerticalOptions="End"
-               
+               BackgroundColor="#25CCCCCC"
+               BorderColor="Transparent"
+               CornerRadius="25"
                Grid.Row="1"
                Grid.Column="1">
             
-            <Label x:Name="FrameTexto2"/>
+            <Label x:Name="LabelAmanhecer"
+                   Text=""
+                   TextColor="Gray"
+                   FontSize="25"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Start"/>
+            
+            <Label x:Name="LabelAnoitecer"
+                   Text=""
+                   TextColor="Gray"
+                   FontSize="25"
+                   HorizontalOptions="Center"
+                   VerticalOptions="End"/>
         </Frame>
 
 <!--============================================================================================================================================================================-->
@@ -88,11 +114,25 @@
         <Frame x:Name="FrameVento"
                HorizontalOptions="Fill"
                VerticalOptions="Start"
-              
+               BackgroundColor="#25CCCCCC"
+               BorderColor="Transparent"
+               CornerRadius="25"
                Grid.Row="1"
                Grid.Column="2">
 
-            <Label x:Name="FrameTexto3"/>
+            <Label x:Name="LabelForça"
+                   Text=""
+                   TextColor="Gray"
+                   FontSize="25"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Start"/>
+            
+            <Label x:Name="LabelDireção"
+                   Text=""
+                   TextColor="Gray"
+                   FontSize="25"
+                   HorizontalOptions="Center"
+                   VerticalOptions="End"/>
         </Frame>
 
 <!--============================================================================================================================================================================-->
@@ -100,11 +140,18 @@
         <Frame x:Name="FrameLua"
                HorizontalOptions="Fill"
                VerticalOptions="End"
-              
+               BackgroundColor="#25CCCCCC"
+               BorderColor="Transparent"
+               CornerRadius="25"
                Grid.Row="1"
                Grid.Column="2">
 
-            <Label x:Name="FrameTexto4"/>
+            <Label x:Name="LabelFase"
+                   Text=""
+                   TextColor="Gray"
+                   FontSize="25"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Start"/>
         </Frame>
 
 <!--============================================================================================================================================================================-->
@@ -112,11 +159,15 @@
         <Frame x:Name="FrameSeila"
                HorizontalOptions="Fill"
                VerticalOptions="Fill"
+               BackgroundColor="#25CCCCCC"
+               BorderColor="Transparent"
+               CornerRadius="25"
                Margin="5,10,5,10"
                Grid.Row="2"
                Grid.ColumnSpan="3">
 
-            <Label x:Name="FrameTexto5"/>
+            <Label x:Name="FrameTexto5"
+                   TextColor="Gray"/>
         </Frame>
 
 <!--============================================================================================================================================================================-->

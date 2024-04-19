@@ -12,5 +12,7 @@ public class Results
 		public string moon_phase{get; set;}
         public int rain{get; set;}
         public int sunrise {get; set;}
-        public int sunset{get; set;}     
+        public int sunset{get; set;} 
+		public int wind_soeedy{get; set;}
+		public int wind_direction{get; set;}    
 	}
