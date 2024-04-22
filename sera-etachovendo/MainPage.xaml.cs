@@ -3,6 +3,7 @@
 public partial class MainPage : ContentPage
 {	
 	Results resultado;
+	const string Url="https://hgbrasil.com/weather?woeid=455927&key=ecb23073";
 	public MainPage()
 	{
 		InitializeComponent();
@@ -60,6 +61,25 @@ public partial class MainPage : ContentPage
 
 	}
 
+//------------------------------------------------------------------------------------------------------------------------------------------------------\\
+	//async void PuxarDoServidor()
+	//{
+		//try
+		//{
+		//	var HttpClient = new HttpClient();
+		//	var response = HttpClient.GetAsync(Url);
+			//if (response.IsSuccessStatusCode)
+			//{
+			//	string content = await response.Content.ReadAsStringAsync();
+			//	resultado = JsonSerializer.Deserializer<Results>(content);
+		//	}
+		//}
+		//catch(Exception e)
+		//{
+			//Erro
+		//}
+		
+	//}
 //------------------------------------------------------------------------------------------------------------------------------------------------------\\
 	void TestarLayout()
 	{

@@ -40,7 +40,7 @@
         </Grid.RowDefinitions>
 
             <Label x:Name="LabelTemperatura"
-                   Text=""
+                   Text="C° "
                    FontSize="30"
                    HorizontalOptions="Center"
                    TextColor="Gray"
@@ -69,14 +69,14 @@
                Grid.Column="1">
             
             <Label x:Name="LabelChuva"
-                   Text=""
+                   Text="Chuva: "
                    TextColor="Gray"
                    FontSize="25"
                    HorizontalOptions="Center"
                    VerticalOptions="Start"/>
             
             <Label x:Name="LabelHumidade"
-                   Text=""
+                   Text="Humidade: "
                    TextColor="Gray"
                    FontSize="25"
                    HorizontalOptions="Center"
@@ -93,16 +93,21 @@
                CornerRadius="25"
                Grid.Row="1"
                Grid.Column="1">
+
+               <Label Text="Sol"
+                      FontSize="35"
+                      VerticalOptions="Start"
+                      HorizontalOptions="Center"/>
             
             <Label x:Name="LabelAmanhecer"
-                   Text=""
+                   Text="Amanhecer: "
                    TextColor="Gray"
                    FontSize="25"
                    HorizontalOptions="Center"
                    VerticalOptions="Start"/>
             
             <Label x:Name="LabelAnoitecer"
-                   Text=""
+                   Text="Anoitecer: "
                    TextColor="Gray"
                    FontSize="25"
                    HorizontalOptions="Center"
@@ -120,15 +125,20 @@
                Grid.Row="1"
                Grid.Column="2">
 
+               <Label Text="Vento"
+                      FontSize="35"
+                      VerticalOptions="Start"
+                      HorizontalOptions="Center"/>
+
             <Label x:Name="LabelForça"
-                   Text=""
+                   Text="Força: "
                    TextColor="Gray"
                    FontSize="25"
                    HorizontalOptions="Center"
-                   VerticalOptions="Start"/>
+                   VerticalOptions="Center"/>
             
             <Label x:Name="LabelDireção"
-                   Text=""
+                   Text="Direção: "
                    TextColor="Gray"
                    FontSize="25"
                    HorizontalOptions="Center"
@@ -146,8 +156,13 @@
                Grid.Row="1"
                Grid.Column="2">
 
+               <Label Text="Lua"
+                      FontSize="35"
+                      VerticalOptions="Start"
+                      HorizontalOptions="Center"/>
+
             <Label x:Name="LabelFase"
-                   Text=""
+                   Text="Fase: "
                    TextColor="Gray"
                    FontSize="25"
                    HorizontalOptions="Center"
