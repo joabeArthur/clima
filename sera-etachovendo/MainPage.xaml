@@ -24,7 +24,7 @@
                Grid.RowSpan="3"
                Grid.ColumnSpan="3"/>
 <!--============================================================================================================================================================================-->  
-        <Frame x:Name="FrameTemperatura"
+        <Frame x:Name="Temperatura"
                HorizontalOptions="Fill"
                VerticalOptions="Fill"
                BackgroundColor="#25CCCCCC"

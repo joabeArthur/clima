@@ -1,15 +1,18 @@
-﻿namespace sera_etachovendo;
+﻿using System.Text.Json;
+
+namespace sera_etachovendo;
 
 public partial class MainPage : ContentPage
 {	
 	Results resultado;
+	Resposta resposta;
 	const string Url="https://hgbrasil.com/weather?woeid=455927&key=ecb23073";
 	public MainPage()
 	{
 		InitializeComponent();
 
-		TestarLayout();
-		PrencherTela();
+		
+		PuxarDoServidor();
 	}
 	
 
@@ -17,24 +20,24 @@ public partial class MainPage : ContentPage
 	
 	void PrencherTela()
 	{
-		LabelTemperatura.Text = resultado.temp.ToString();
-		LabelCity.Text = resultado.city;
-		LabelChuva.Text = resultado.description;
-		LabelHumidade.Text = resultado.cloudiness.ToString();
-		LabelAmanhecer.Text = resultado.sunrise.ToString();
-		LabelAnoitecer.Text = resultado.sunset.ToString();
-		LabelForça.Text = resultado.wind_soeedy.ToString();
-		LabelDireção.Text = resultado.wind_direction.ToString();
-		LabelFase.Text = resultado.moon_phase;
+		LabelTemperatura.Text = resposta.results.temp.ToString();
+		LabelCity.Text = resposta.results.city;
+		LabelChuva.Text = resposta.results.description;
+		LabelHumidade.Text = resposta.results.cloudiness.ToString();
+		LabelAmanhecer.Text = resposta.results.sunrise.ToString();
+		LabelAnoitecer.Text = resposta.results.sunset.ToString();
+		LabelForça.Text = resposta.results.wind_soeedy.ToString();
+		LabelDireção.Text = resposta.results.wind_direction.ToString();
+		LabelFase.Text = resposta.results.moon_phase;
 
 
-		if (resultado.currently == "dia")
+		if (resposta.results.currently == "dia")
 		{
-			if (resultado.rain >= 10)
+			if (resposta.results.rain >= 10)
 			{
 				imgFundo.Source = "chuvadia.jpg";
 			}
-			else if(resultado.cloudiness >= 10)
+			else if(resposta.results.cloudiness >= 10)
 			{
 				imgFundo.Source = "nubladodia.jpg";
 			}
@@ -45,11 +48,11 @@ public partial class MainPage : ContentPage
 		}
 		else
 		{
-			if (resultado.rain >= 10)
+			if (resposta.results.rain >= 10)
 			{
 				imgFundo.Source = "chuvanoite.jpg";
 			}
-			else if (resultado.cloudiness >= 10)
+			else if (resposta.results.cloudiness >= 10)
 			{
 				imgFundo.Source = "noitenubladdad.jpg";
 			}
@@ -62,37 +65,38 @@ public partial class MainPage : ContentPage
 	}
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------\\
-	//async void PuxarDoServidor()
-	//{
-		//try
-		//{
-		//	var HttpClient = new HttpClient();
-		//	var response = HttpClient.GetAsync(Url);
-			//if (response.IsSuccessStatusCode)
-			//{
-			//	string content = await response.Content.ReadAsStringAsync();
-			//	resultado = JsonSerializer.Deserializer<Results>(content);
-		//	}
-		//}
-		//catch(Exception e)
-		//{
-			//Erro
-		//}
-		
-	//}
-//------------------------------------------------------------------------------------------------------------------------------------------------------\\
-	void TestarLayout()
+	async void PuxarDoServidor()
 	{
-		resultado = new Results();
+		try
+		{
+			var HttpClient = new HttpClient();
+			var response = await HttpClient.GetAsync(Url);
+			if (response.IsSuccessStatusCode)
+			{
+				string content = await response.Content.ReadAsStringAsync();
+				resultado = JsonSerializer.Deserialize<Results>(content);
+			}
+		}
+		catch(Exception e)
+		{
+			//Erro
+		}
 
-		resultado.temp = 20;
-		resultado.city = "PR, Apucarana";
-		resultado.description = "Chuva";
-		resultado.currently = "noite";
-		resultado.rain = 9;	
-		resultado.cloudiness = 10;	
-		resultado.sunrise = 10;
-	}
+		PrencherTela();
+	 }
+//------------------------------------------------------------------------------------------------------------------------------------------------------\\
+	//void TestarLayout()
+	//{
+	//	resultado = new Results();
+
+	//	resposta.results.temp = 20;
+	//	resposta.results.city = "PR, Apucarana";
+	///	resposta.results.description = "Chuva";
+	//	resposta.results.currently = "noite";
+	//	resposta.results.rain = 9;	
+	//	resposta.results.cloudiness = 10;	
+	//	resposta.results.sunrise = 10;
+	//}
 	
 }
 
