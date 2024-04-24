@@ -4,13 +4,14 @@ namespace sera_etachovendo;
 
 public partial class MainPage : ContentPage
 {	
-	Results resultado;
+	Results results;
 	Resposta resposta;
-	const string Url="https://hgbrasil.com/weather?woeid=455927&key=ecb23073";
+	const string Url="https://api.hgbrasil.com/weather?woeid=455927&key=ecb23073";
 	public MainPage()
 	{
 		InitializeComponent();
 
+		
 		
 		PuxarDoServidor();
 	}
@@ -20,24 +21,25 @@ public partial class MainPage : ContentPage
 	
 	void PrencherTela()
 	{
-		LabelTemperatura.Text = resposta.results.temp.ToString();
+		LabelTemperatura.Text = resposta.results.temp + "C°".ToString();
 		LabelCity.Text = resposta.results.city;
 		LabelChuva.Text = resposta.results.description;
-		LabelHumidade.Text = resposta.results.cloudiness.ToString();
-		LabelAmanhecer.Text = resposta.results.sunrise.ToString();
-		LabelAnoitecer.Text = resposta.results.sunset.ToString();
-		LabelForça.Text = resposta.results.wind_soeedy.ToString();
-		LabelDireção.Text = resposta.results.wind_direction.ToString();
+		LabelHumidade.Text = resposta.results.humidity.ToString();
+		LabelAmanhecer.Text = resposta.results.sunrise;
+		LabelAnoitecer.Text = resposta.results.sunset;
+		LabelForça.Text = resposta.results.wind_speedy;
+		LabelDireção.Text = resposta.results.wind_cardial;
 		LabelFase.Text = resposta.results.moon_phase;
+		
 
 
 		if (resposta.results.currently == "dia")
 		{
-			if (resposta.results.rain >= 10)
+			if (resposta.results.rain >= 1)
 			{
 				imgFundo.Source = "chuvadia.jpg";
 			}
-			else if(resposta.results.cloudiness >= 10)
+			else if(resposta.results.cloudiness >= 1)
 			{
 				imgFundo.Source = "nubladodia.jpg";
 			}
@@ -48,11 +50,11 @@ public partial class MainPage : ContentPage
 		}
 		else
 		{
-			if (resposta.results.rain >= 10)
+			if (resposta.results.rain >= 1)
 			{
 				imgFundo.Source = "chuvanoite.jpg";
 			}
-			else if (resposta.results.cloudiness >= 10)
+			else if (resposta.results.cloudiness >= 1)
 			{
 				imgFundo.Source = "noitenubladdad.jpg";
 			}
@@ -69,20 +71,21 @@ public partial class MainPage : ContentPage
 	{
 		try
 		{
-			var HttpClient = new HttpClient();
-			var response = await HttpClient.GetAsync(Url);
+			var httpClient = new HttpClient();
+			var response = await httpClient.GetAsync(Url);
 			if (response.IsSuccessStatusCode)
 			{
 				string content = await response.Content.ReadAsStringAsync();
-				resultado = JsonSerializer.Deserialize<Results>(content);
+				resposta = JsonSerializer.Deserialize<Resposta>(content);
+				PrencherTela();
 			}
 		}
 		catch(Exception e)
 		{
-			//Erro
+		System.Diagnostics.Debug.WriteLine(e);
 		}
 
-		PrencherTela();
+		
 	 }
 //------------------------------------------------------------------------------------------------------------------------------------------------------\\
 	//void TestarLayout()

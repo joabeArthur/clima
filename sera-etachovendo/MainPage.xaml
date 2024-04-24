@@ -40,7 +40,7 @@
         </Grid.RowDefinitions>
 
             <Label x:Name="LabelTemperatura"
-                   Text="C° "
+                   Text=""
                    FontSize="30"
                    HorizontalOptions="Center"
                    TextColor="Gray"
@@ -69,14 +69,14 @@
                Grid.Column="1">
             
             <Label x:Name="LabelChuva"
-                   Text="Chuva: "
+                   Text="Chuva:"
                    TextColor="Gray"
                    FontSize="25"
                    HorizontalOptions="Center"
                    VerticalOptions="Start"/>
             
             <Label x:Name="LabelHumidade"
-                   Text="Humidade: "
+                   Text="Humidade:"
                    TextColor="Gray"
                    FontSize="25"
                    HorizontalOptions="Center"
@@ -100,14 +100,14 @@
                       HorizontalOptions="Center"/>
             
             <Label x:Name="LabelAmanhecer"
-                   Text="Amanhecer: "
+                   Text="Amanhecer:"
                    TextColor="Gray"
                    FontSize="25"
                    HorizontalOptions="Center"
                    VerticalOptions="Start"/>
             
             <Label x:Name="LabelAnoitecer"
-                   Text="Anoitecer: "
+                   Text="Anoitecer:"
                    TextColor="Gray"
                    FontSize="25"
                    HorizontalOptions="Center"
