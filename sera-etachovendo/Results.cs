@@ -1,10 +1,10 @@
 public class Results
 	{
 		public int temp{get; set;}
-        public string sunset{get; set;}
 		public int humidity{get; set;}
 
 		public string date{get; set;}
+		public string sunset{get; set;}
 		public string sunrise {get; set;}
 		public string time{get; set;}
 		public string description{get; set;}
@@ -17,5 +17,6 @@ public class Results
 		//public int img_id{get; set;}
 		public double cloudiness{get; set;}
         public double rain{get; set;} 
+		//public List<Forecast> Forecasts{get; set;}
 		    
 	}
