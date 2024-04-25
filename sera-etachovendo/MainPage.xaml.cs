@@ -23,7 +23,7 @@ public partial class MainPage : ContentPage
 	{
 		LabelTemperatura.Text = resposta.results.temp + "C°".ToString();
 		LabelCity.Text = resposta.results.city;
-		LabelChuva.Text = resposta.results.description;
+		LabelClima.Text = resposta.results.description;
 		LabelHumidade.Text = resposta.results.humidity.ToString();
 		LabelAmanhecer.Text = resposta.results.sunrise;
 		LabelAnoitecer.Text = resposta.results.sunset;

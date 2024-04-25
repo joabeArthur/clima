@@ -30,7 +30,7 @@
                BackgroundColor="#25CCCCCC"
                BorderColor="Transparent"
                CornerRadius="25"
-               Grid.Row="1"
+               Grid.RowSpan="2"
                Grid.Column="0">
             
         <Grid>
@@ -43,13 +43,13 @@
                    Text=""
                    FontSize="30"
                    HorizontalOptions="Center"
-                   TextColor="Gray"
+                   TextColor="#9EF522"
                    Grid.Row="0"/>
             
             <Label x:Name="LabelCity"
                    Text=""
                    FontFamily="Fighting_Spirit_2"
-                   TextColor="Gray"
+                   TextColor="#9EF522"
                    FontSize="15"
                    HorizontalOptions="Center"
                   
@@ -65,22 +65,53 @@
                BackgroundColor="#25CCCCCC"
                BorderColor="Transparent"
                CornerRadius="25"
-               Grid.Row="1"
+               Grid.Row="0"
                Grid.Column="1">
+
+       <Grid>
+       <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
             
-            <Label x:Name="LabelChuva"
-                   Text="Chuva:"
-                   TextColor="Gray"
+            <Label Text="Sol"
+                      FontSize="35"
+                      Grid.Row="0"
+                      Grid.ColumnSpan="3"/>
+
+            <Label x:Name="Clima"
+                   Text="Clima:"
+                   TextColor="#9EF522"
                    FontSize="25"
-                   HorizontalOptions="Center"
-                   VerticalOptions="Start"/>
+                   Grid.Row="1"
+                   Grid.Column="0"/>
+              
+              <Label x:Name="LabelClima"
+                   Text=""
+                   TextColor="#9EF522"
+                   FontSize="25"
+                   Grid.Row="1"
+                   Grid.Column="2"/>
             
-            <Label x:Name="LabelHumidade"
+            <Label x:Name="Humidade"
                    Text="Humidade:"
-                   TextColor="Gray"
+                   TextColor="#9EF522"
                    FontSize="25"
-                   HorizontalOptions="Center"
-                   VerticalOptions="End"/>
+                   Grid.Row="2"
+                   Grid.Column="0"/>
+
+              <Label x:Name="LabelHumidade"
+                   Text=""
+                   TextColor="#9EF522"
+                   FontSize="25"
+                   Grid.Row="2"
+                   Grid.Column="1"/>
+        </Grid>
         </Frame>
 
 <!--============================================================================================================================================================================-->
@@ -94,24 +125,50 @@
                Grid.Row="1"
                Grid.Column="1">
 
+       <Grid>
+       <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
                <Label Text="Sol"
                       FontSize="35"
-                      VerticalOptions="Start"
-                      HorizontalOptions="Center"/>
+                      Grid.Row="0"
+                      Grid.ColumnSpan="3"/>
             
-            <Label x:Name="LabelAmanhecer"
+            <Label x:Name="Amanhecer"
                    Text="Amanhecer:"
-                   TextColor="Gray"
+                   TextColor="#9EF522"
                    FontSize="25"
-                   HorizontalOptions="Center"
-                   VerticalOptions="Start"/>
+                   Grid.Row="1"
+                   Grid.Column="0"/>
+
+              <Label x:Name="LabelAmanhecer"
+                   Text=""
+                   TextColor="#9EF522"
+                   FontSize="25"
+                   Grid.Row="1"
+                   Grid.Column="1"/>
             
-            <Label x:Name="LabelAnoitecer"
+            <Label x:Name="Anoitecer"
                    Text="Anoitecer:"
-                   TextColor="Gray"
+                   TextColor="#9EF522"
                    FontSize="25"
-                   HorizontalOptions="Center"
-                   VerticalOptions="End"/>
+                   Grid.Row="2"
+                   Grid.Column="0"/>
+              
+              <Label x:Name="LabelAnoitecer"
+                   Text=""
+                   TextColor="#9EF522"
+                   FontSize="25"
+                   Grid.Row="2"
+                   Grid.Column="1"/>
+        </Grid>
         </Frame>
 
 <!--============================================================================================================================================================================-->
@@ -125,24 +182,50 @@
                Grid.Row="1"
                Grid.Column="2">
 
+       <Grid>
+       <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
                <Label Text="Vento"
                       FontSize="35"
-                      VerticalOptions="Start"
-                      HorizontalOptions="Center"/>
+                      Grid.Row="0"
+                      Grid.ColumnSpan="3"/>
 
-            <Label x:Name="LabelForça"
+            <Label x:Name="Força"
                    Text="Força: "
-                   TextColor="Gray"
+                   TextColor="#9EF522"
                    FontSize="25"
-                   HorizontalOptions="Center"
-                   VerticalOptions="Center"/>
+                   Grid.Row="1"
+                   Grid.Column="0"/>
+
+              <Label x:Name="LabelForça"
+                   Text=""
+                   TextColor="#9EF522"
+                   FontSize="25"
+                   Grid.Row="1"
+                   Grid.Column="1"/>
             
-            <Label x:Name="LabelDireção"
+            <Label x:Name="Direção"
                    Text="Direção: "
-                   TextColor="Gray"
+                   TextColor="#9EF522"
                    FontSize="25"
-                   HorizontalOptions="Center"
-                   VerticalOptions="End"/>
+                   Grid.Row="2"
+                   Grid.Column="0"/>
+              
+              <Label x:Name="LabelDireção"
+                   Text=""
+                   TextColor="#9EF522"
+                   FontSize="25"
+                   Grid.Row="2"
+                   Grid.Column="1"/>
+        </Grid>
         </Frame>
 
 <!--============================================================================================================================================================================-->
@@ -155,18 +238,37 @@
                CornerRadius="25"
                Grid.Row="1"
                Grid.Column="2">
+       
+       <Grid>
+       <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
                <Label Text="Lua"
                       FontSize="35"
-                      VerticalOptions="Start"
-                      HorizontalOptions="Center"/>
+                      Grid.Row="0"
+                      Grid.ColumnSpan="3"/>
 
-            <Label x:Name="LabelFase"
+            <Label x:Name="Fase"
                    Text="Fase: "
-                   TextColor="Gray"
+                   TextColor="#9EF522"
                    FontSize="25"
-                   HorizontalOptions="Center"
-                   VerticalOptions="Start"/>
+                   Grid.Row="1"
+                   Grid.Column="0"/>
+              
+              <Label x:Name="LabelFase"
+                   Text=""
+                   TextColor="#9EF522"
+                   FontSize="25"
+                   Grid.Row="1"
+                   Grid.Column="1"/>
+        </Grid>
         </Frame>
 
 <!--============================================================================================================================================================================-->
@@ -182,7 +284,7 @@
                Grid.ColumnSpan="3">
 
             <Label x:Name="FrameTexto5"
-                   TextColor="Gray"/>
+                   TextColor="#9EF522"/>
         </Frame>
 
 <!--============================================================================================================================================================================-->
