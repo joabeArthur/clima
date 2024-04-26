@@ -1,3 +1,5 @@
+namespace sera_etachovendo;
+
 public class Results
 	{
 		public int temp{get; set;}
@@ -17,6 +19,6 @@ public class Results
 		//public int img_id{get; set;}
 		public double cloudiness{get; set;}
         public double rain{get; set;} 
-		//public List<Forecast> Forecasts{get; set;}
+		public List <Forecast> forecast {get; set;}
 		    
 	}

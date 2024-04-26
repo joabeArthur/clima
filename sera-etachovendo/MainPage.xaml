@@ -2,8 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="sera_etachovendo.MainPage"
-             Shell.NavBarIsVisible="False"
-             BackgroundColor="Blue">
+             Shell.NavBarIsVisible="False">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -272,7 +271,7 @@
 
 <!--============================================================================================================================================================================-->
 
-        <Frame x:Name="FrameSeila"
+        <Frame x:Name="FrameFore"
                HorizontalOptions="Fill"
                VerticalOptions="Fill"
                BackgroundColor="#25CCCCCC"
@@ -282,8 +281,79 @@
                Grid.Row="2"
                Grid.ColumnSpan="3">
 
-            <Label x:Name="FrameTexto5"
-                   TextColor="#9EF522"/>
+       <CollectionView x:Name="ListForecast">
+             <CollectionView.ItemsLayout>
+              <LinearItemsLayout Orientation="Horizontal"
+                                 ItemSpacing="10"/>
+             </CollectionView.ItemsLayout>
+
+             <CollectionView.ItemTemplate>
+              <DataTemplate>
+                     <Frame WidthRequest="200"
+                            CornerRadius="25">
+                      <Grid>
+                            <Grid.RowDefinitions>
+                                   <RowDefinition Height="15"/>
+                                   <RowDefinition Height="20"/>
+                                   <RowDefinition Height="15"/>
+                                   <RowDefinition Height="15"/>
+                                   <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                   <ColumnDefinition Width="*"/>
+                                   <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                                   <Label Text="{Binding date}"
+                                          FontSize="12"
+                                          TextColor="#000"
+                                          HorizontalOptions="Center"
+                                          Grid.Row="0"
+                                          Grid.ColumnSpan="2"/>
+
+                                   <Label Text="{Binding Weekday}"
+                                          FontSize="16"
+                                          TextColor="#000"
+                                          HorizontalOptions="Center"
+                                          Grid.Row="1"
+                                          Grid.Column="2"/>
+                                   
+                                   <Label Text="max:"
+                                          FontSize="12"
+                                          TextColor="#000"
+                                          HorizontalOptions="Center"
+                                          Grid.Row="3"
+                                          Grid.Column="0"/>
+                                   <Label Text="min:"
+                                          FontSize="12"
+                                          TextColor="#000"
+                                          HorizontalOptions="Center"
+                                          Grid.Row="2"
+                                          Grid.Column="0"/>
+                                   
+                                   <Label Text="{Binding max, StringFormat='{0}º C'}"
+                                          FontSize="14"
+                                          TextColor="#000"
+                                          HorizontalOptions="Center"
+                                          Grid.Row="3"
+                                          Grid.Column="1"/>
+                                   <Label Text="{Binding min, StringFormat='{0}º C'}"
+                                          FontSize="14"
+                                          TextColor="#000"
+                                          HorizontalOptions="Center"
+                                          Grid.Row="2"
+                                          Grid.Column="1"/>
+
+                                   <Image Source="{Binding condition}"
+                                          Aspect="Fill"
+                                          HeightRequest="50"
+                                          Grid.Row="4"
+                                          Grid.ColumnSpan="2"/>
+                      </Grid>
+                     </Frame>
+              </DataTemplate>
+             </CollectionView.ItemTemplate>
+       </CollectionView>
         </Frame>
 
 <!--============================================================================================================================================================================-->

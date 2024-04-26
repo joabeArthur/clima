@@ -30,6 +30,7 @@ public partial class MainPage : ContentPage
 		LabelForça.Text = resposta.results.wind_speedy;
 		LabelDireção.Text = resposta.results.wind_cardial;
 		LabelFase.Text = resposta.results.moon_phase;
+		ListForecast.ItemsSource = resposta.results.forecast;
 		
 
 
