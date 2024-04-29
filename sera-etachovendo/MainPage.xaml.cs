@@ -21,6 +21,25 @@ public partial class MainPage : ContentPage
 	
 	void PrencherTela()
 	{
+		if (resposta.results.moon_phase == "waning_gibbous")
+		{
+			resposta.results.moon_phase = "Minguante";
+		}
+		else if (resposta.results.moon_phase == "full")
+		{
+			resposta.results.moon_phase = "Cheia";
+		}
+		else if (resposta.results.moon_phase == "waxing_crescent")
+		{
+			resposta.results.moon_phase = "Quarto crescente";
+		}
+		else if (resposta.results.moon_phase == "new")
+		{
+			resposta.results.moon_phase = "Nova";
+		}
+
+
+
 		LabelTemperatura.Text = resposta.results.temp + "C°".ToString();
 		LabelCity.Text = resposta.results.city;
 		LabelClima.Text = resposta.results.description;
@@ -31,6 +50,7 @@ public partial class MainPage : ContentPage
 		LabelDireção.Text = resposta.results.wind_cardial;
 		LabelFase.Text = resposta.results.moon_phase;
 		ListForecast.ItemsSource = resposta.results.forecast;
+
 		
 
 
